@@ -1,0 +1,40 @@
+[tool.poetry]
+name = "diabetes-ml"
+version = "0.1.0"
+description = "Machine learning pipeline for diabetes prediction"
+authors = ["Kulakova Valentina"]
+
+[tool.poetry.dependencies]
+python = "^3.12"
+pandas = "2.2.3"
+numpy = "1.26.4"
+scikit-learn = "1.5.2"
+python-dotenv = "1.0.0"
+streamlit = "1.28.0"
+matplotlib = "3.9.2"
+seaborn = "0.13.2"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+ruff = "^0.6"
+pre-commit = "^3.8"
+
+[tool.ruff]
+line-length = 88
+target-version = "py312"
+
+[tool.ruff.lint]
+select = [
+    "E",
+    "F",
+    "I",
+    "B",
+    "UP"
+]
+
+[tool.ruff.format]
+quote-style = "double"
+
+[build-system]
+requires = ["poetry-core>=2.0.0"]
+build-backend = "poetry.core.masonry.api"
