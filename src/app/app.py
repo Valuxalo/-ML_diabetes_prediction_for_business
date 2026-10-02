@@ -1,10 +1,12 @@
-import os
 import pickle
+import sys
 from pathlib import Path
 
 import pandas as pd
 import streamlit as st
-from dotenv import load_dotenv
+
+sys.path.append(str(Path(__file__).resolve().parent.parent))
+from config import ARTIFACTS_DIR, MODEL_NAME
 
 st.set_page_config(
     page_title="Diabetes Prediction",
@@ -31,14 +33,12 @@ CATEGORICAL_FEATURES = {
 
 BINARY_FEATURES = {"hypertension": ["Нет", "Да"], "heart_disease": ["Нет", "Да"]}
 
-load_dotenv()
-
 
 class DiabetesPredictor:
     def __init__(self):
         self.model = None
-        self.model_name = os.getenv("MODEL_NAME")
-        self.model_path = os.getenv("MODEL_PATH")
+        self.model_name = MODEL_NAME
+        self.model_path = ARTIFACTS_DIR
         self.root_dir = Path(__file__).parent.parent.parent
         self.load_model()
         self.feature_types = {
@@ -55,7 +55,7 @@ class DiabetesPredictor:
     def load_model(self):
         """Загрузка сохраненной модели"""
         try:
-            path = f"{self.root_dir}/{self.model_path}/{self.model_name}.pkl"
+            path = f"{ARTIFACTS_DIR}/{self.model_name}.pkl"
             with open(path, "rb") as file:
                 self.model = pickle.load(file)
             return True
