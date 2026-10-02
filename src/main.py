@@ -1,9 +1,9 @@
-from load_data import load_data
-from train import train
-from predict import predict
-from save_model import save_model
-from processing import processor, split_data
 from config import MODEL_NAME
+from load_data import load_data
+from predict import predict
+from processing import processor, split_data
+from save_model import save_model
+from train import train
 
 
 class MLPipeline:
@@ -11,7 +11,7 @@ class MLPipeline:
         self.model = None
         self.data = None
         self.name_model = MODEL_NAME
-        
+
     def run_full_pipeline(self):
         self.data = load_data(load_path=None)
         if not self.data.empty:
@@ -22,7 +22,7 @@ class MLPipeline:
                 predict(self.model, self.X_test, self.y_test)
             save_model(model=self.model, name=self.name_model)
             print("Pipeline выполнен успешно!")
-    
+
 
 # Использование одной командой
 if __name__ == "__main__":

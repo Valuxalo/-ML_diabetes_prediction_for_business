@@ -1,4 +1,5 @@
 from pathlib import Path
+
 MODEL_NAME = "RandomForest"
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]
