@@ -88,6 +88,8 @@ blood_glucose_level    0.303747
 Проект упаковывается в docker и реализовано приложение Streamlit для демонстрации.
 
 ## 8. Контактная информация
-Репоизторий проекта: https://github.com/Valuxalo/-ML_diabetes_prediction_for_business
+Репозиторий проекта: https://github.com/Valuxalo/-ML_diabetes_prediction_for_business
+
 Контактное лицо: Кулакова Валентина Валерьевна, kulakova-vv@mail.ru
+
 Последнее обновление: 13.10.2026г.
