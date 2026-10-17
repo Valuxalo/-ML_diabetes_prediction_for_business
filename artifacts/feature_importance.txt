@@ -1,10 +1,10 @@
 Топ-10 важных признаков:
             feature  importance
-        HbA1c_level    0.433883
-blood_glucose_level    0.303747
-                age    0.156815
-                bmi    0.063645
-       hypertension    0.020602
-      heart_disease    0.010827
-    smoking_history    0.008961
-             gender    0.001520
+        HbA1c_level    0.433945
+blood_glucose_level    0.305647
+                age    0.156237
+                bmi    0.063053
+       hypertension    0.020090
+      heart_disease    0.010554
+    smoking_history    0.008984
+             gender    0.001489
