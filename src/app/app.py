@@ -84,9 +84,7 @@ class DiabetesPredictor:
             df["heart_disease"] = pd.to_numeric(df["heart_disease"], errors="coerce")
             df["bmi"] = pd.to_numeric(df["bmi"], errors="coerce")
             df["HbA1c_level"] = pd.to_numeric(df["HbA1c_level"], errors="coerce")
-            df["blood_glucose_level"] = pd.to_numeric(
-                df["blood_glucose_level"], errors="coerce"
-            )
+            df["blood_glucose_level"] = pd.to_numeric(df["blood_glucose_level"], errors="coerce")
 
             # Проверяем на NaN
             if df.isnull().any().any():
@@ -116,9 +114,7 @@ def create_input_form():
 
         with col1:
             gender_map = {"Женщина": "Female", "Мужчина": "Male"}
-            gender_ru = st.selectbox(
-                "Пол", options=["Женщина", "Мужчина"], help="Пол пациента"
-            )
+            gender_ru = st.selectbox("Пол", options=["Женщина", "Мужчина"], help="Пол пациента")
             age = st.slider(
                 "Возраст",
                 min_value=18,
@@ -291,9 +287,7 @@ def main():
         # Проверка загрузки модели
         if predictor.model is None:
             st.error("Модель не загружена! Пожалуйста, обучите модель сначала.")
-            st.info(
-                "Для обучения модели запустите основной пайплайн или загрузите готовую модель."
-            )
+            st.info("Для обучения модели запустите основной пайплайн или загрузите готовую модель.")
             return
 
         # Предсказание
